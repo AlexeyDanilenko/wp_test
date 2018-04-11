@@ -208,3 +208,10 @@ function register_post_types(){
 		'query_var'           => true,
 	) );
 }
+
+
+function dolly_shortcode_function() {
+return '<div class="test-shortcode">Hello Wordl!</div>';
+}
+
+add_shortcode('dolly', 'dolly_shortcode_function');
