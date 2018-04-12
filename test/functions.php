@@ -108,6 +108,16 @@ function test_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Поиск в шапке', 'test' ),
+		'id'            => 'menu-sidebar',
+		'description'   => esc_html__( 'Добавить сюда виджет поиска', 'test' ),
+		'before_widget' => '<div id="%1$s" class="header-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 }
 add_action( 'widgets_init', 'test_widgets_init' );
 

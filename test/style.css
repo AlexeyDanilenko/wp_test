@@ -451,6 +451,13 @@ html {
 .current_page_item a {
 	color: #00acdd;
 }
+.header-widget {
+	background: #fff;
+}
+.header-widget .screen-reader-text {
+	display: none;
+}
+
 .main_slider {
 	background: #2073b2;
 	height: 336px;

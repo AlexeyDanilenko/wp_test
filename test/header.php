@@ -47,9 +47,11 @@
 							'depth'           => 0,
 							'walker'          => '',
 						) ); ?>
-						<form class="form-inline">
+
+						<?php dynamic_sidebar( 'menu-sidebar' ) ?>
+						<!-- <form class="form-inline">
 					    <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
-					  </form>
+					  </form> -->
 					</div>
 				</nav>
 			</div><!-- /.header -->
