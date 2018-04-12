@@ -6,7 +6,6 @@
  *
  * @package Test
  */
-
 if ( ! function_exists( 'test_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -23,10 +22,8 @@ if ( ! function_exists( 'test_setup' ) ) :
 		 * to change 'test' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'test', get_template_directory() . '/languages' );
-
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -34,14 +31,11 @@ if ( ! function_exists( 'test_setup' ) ) :
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
-
 		
-
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'test' ),
 		) );
-
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -53,16 +47,13 @@ if ( ! function_exists( 'test_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
-
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'test_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -77,7 +68,6 @@ if ( ! function_exists( 'test_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'test_setup' );
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -92,7 +82,6 @@ function test_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'test_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'test_content_width', 0 );
-
 /**
  * Register widget area.
  *
@@ -108,7 +97,6 @@ function test_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
-
 	register_sidebar( array(
 		'name'          => esc_html__( 'Поиск в шапке', 'test' ),
 		'id'            => 'menu-sidebar',
@@ -120,63 +108,49 @@ function test_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'test_widgets_init' );
-
 /**
  * Enqueue scripts and styles.
  */
 function test_scripts() {
 	wp_enqueue_style( 'test-style', get_stylesheet_uri() );
-
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
-
 	wp_enqueue_script( 'test-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true );
 	wp_enqueue_script( 'popper-js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery'), null, true );
-
 	wp_enqueue_script( 'test-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'test_scripts' );
-
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
-
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
 /**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
 remove_filter( 'the_content', 'wpautop' ); // Отключаем автоформатирование в полном посте
 remove_filter( 'the_excerpt', 'wpautop' ); // Отключаем автоформатирование в кратком(анонсе) посте
 remove_filter('comment_text', 'wpautop'); // Отключаем автоформатирование в комментариях
-
-add_theme_support (custom-logo);
-
+add_theme_support ('custom-logo');
 add_theme_support( 'post-thumbnails' );
-
 add_action('init', 'register_post_types');
 function register_post_types(){
 	register_post_type('anons', array(
@@ -218,10 +192,7 @@ function register_post_types(){
 		'query_var'           => true,
 	) );
 }
-
-
 function dolly_shortcode_function() {
 return '<div class="test-shortcode">Hello Wordl!</div>';
 }
-
 add_shortcode('dolly', 'dolly_shortcode_function');
