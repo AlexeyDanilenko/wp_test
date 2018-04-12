@@ -12,6 +12,6 @@ In it you will find:
 
 * For **Home Page** creation use *home-page.php* template.
 * Custom post type - **Anons** - is created for home page slider. Use post miniature for slider image. Use **760x336px** image size.
-* Тo appear on the Home Page, posts should belong to the category with ID=1. It's better to rename the category into **"News"**, and the category slag - into **'news'**.
+* Тo appear on the Home Page, posts should belong to the category with **ID=1**. It's better to rename the category into **"News"**, and the category slag - into **'news'**.
 * **Logo** is to be added in *Appearance -> Customize -> Site Identity*
 * Add **"Search"** widget to *"Поиск в шапке"* widget area, and it will appear in site menu.
