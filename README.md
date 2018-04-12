@@ -10,5 +10,8 @@ In it you will find:
 
 # Some information on TEST Theme
 
-[+] For home page creation use home-page.php template.
-[+] Custom post type - Anons - is created for home page slider. Use post miniature for slider image. Use 760*336 px image size.
+a) For home page creation use home-page.php template.
+b) Custom post type - Anons - is created for home page slider. Use post miniature for slider image. Use 760*336 px image size.
+c) Тo appear on the Home Page, posts should belong to the category with ID=1. It's better to rename the category into "News", and the category slag - into 'news'.
+d) Logo is to be added in Appearance -> Customize -> Site Identity
+e) Add "Search" widget to "Поиск в шапке" widget area, and it will appear in site menu.
